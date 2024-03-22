@@ -470,11 +470,15 @@ a:hover {
 
 }
 
+<<<<<<< HEAD
+
+=======
 @media screen and (max-width: 1000px) {
   .professor2 {
     margin-left: 3%;
   }
 }
+>>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
 
 .myh3 {
   white-space: nowrap !important;
@@ -494,4 +498,106 @@ a:hover {
 
 .co {
   list-style-type: none;
+<<<<<<< HEAD
+}
+
+.my_author_ul {
+  list-style-type: none;
+  width: 500px;
+}
+
+body {
+  zoom: 1.1 !important;
+}
+
+/* 在屏幕宽度小于等于 768px 时，将缩放比例改为 1.0 */
+@media (max-width: 768px) {}
+
+@media screen and (max-width: 1000px) {
+  body {
+    zoom: 1.0 !important;
+  }
+
+  #professor3 {
+    margin-left: -25%;
+  }
+
+  .professor2 {
+    margin-left: 5%;
+  }
+
+  #ulist {
+    margin-left: -100%;
+  }
+
+  .my_author_ul {
+    margin-left: -1%;
+    margin-top: 2%;
+    display: block;
+  }
+
+  .author {
+    margin-left: 25%;
+    margin-bottom: -10%;
+  }
+
+  .author2 {
+    margin-left: 33%;
+    margin-bottom: -10%;
+  }
+
+  .author__avatar2 {
+    margin-left: -15%;
+    margin-top: 5%;
+    /* font: 200px; */
+  }
+
+  .author__avatar {
+    /* margin-left: -24%; */
+    margin-top: 2%;
+  }
+
+  .author__name2 {
+    margin-top: 2%;
+  }
+
+  .author__name {
+    margin-top: 2%;
+  }
+
+  #name2 {
+    font-size: 20px;
+    margin-left: -50%;
+  }
+
+  .my_author_ul2 {
+    margin-left: -60%;
+  }
+}
+
+.jump {
+  color: blueviolet;
+}
+
+.contextforauthor {
+  margin-left: 28%;
+}
+
+/* .author {
+  margin-top: 10%;
+} */
+/* 当屏幕宽度大于700px时 */
+@media screen and (min-width: 1300px),
+(max-width:1000px) {
+
+  /* 隐藏 <br> */
+  .break-on-mobile {
+    display: none;
+  }
+}
+
+.my_author_ul2 {
+  list-style-type: none;
+=======
+>>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
 }

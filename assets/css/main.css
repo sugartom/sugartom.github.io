@@ -3484,13 +3484,31 @@ select:focus {
   display: flex;
   justify-content: flex-start;
   align-content: flex-start;
+<<<<<<< HEAD
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile_box>* {
+  flex-basis: 100%;
+  /* 每个子元素占据一行 */
+=======
   align-items: center
+>>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
 }
 
 @media (min-width: 57.8125em) {
   .profile_box {
+<<<<<<< HEAD
+    display: block;
+
+  }
+
+
+=======
     display: block
   }
+>>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
 }
 
 .author__avatar {
