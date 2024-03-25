@@ -507,7 +507,37 @@ body {
 }
 
 /* 在屏幕宽度小于等于 768px 时，将缩放比例改为 1.0 */
-@media (max-width: 768px) {}
+@media (min-width: 1000px) {
+  .hidden-s1 {
+    display: none;
+  }
+
+  .hidden-s2 {
+    display: none;
+  }
+
+  .hidden-s {
+    display: none;
+  }
+
+  #author2-img {
+    margin-left: 35%;
+  }
+
+  #name2 {
+    margin-left: 20%;
+  }
+
+  #professor3 {
+    margin-left: 20%;
+  }
+
+  .my_author_ul2 {
+    margin-left: 15%;
+    width: 300px;
+  }
+}
+
 
 @media screen and (max-width: 1000px) {
   body {
