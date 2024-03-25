@@ -470,17 +470,13 @@ a:hover {
 
 }
 
-<<<<<<< HEAD
-
-=======
-@media screen and (max-width: 1000px) {
+<<<<<<< HEAD=======@media screen and (max-width: 1000px) {
   .professor2 {
     margin-left: 3%;
   }
 }
->>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
 
-.myh3 {
+>>>>>>>c1acb78689d703bf2b4ee5e04094a409c99d91ae .myh3 {
   white-space: nowrap !important;
 }
 
@@ -498,7 +494,7 @@ a:hover {
 
 .co {
   list-style-type: none;
-<<<<<<< HEAD
+  <<<<<<< HEAD
 }
 
 .my_author_ul {
@@ -519,11 +515,11 @@ body {
   }
 
   #professor3 {
-    margin-left: -25%;
+    margin-left: -40%;
   }
 
   .professor2 {
-    margin-left: 5%;
+    margin-left: -15%;
   }
 
   #ulist {
@@ -552,8 +548,9 @@ body {
     /* font: 200px; */
   }
 
+
   .author__avatar {
-    /* margin-left: -24%; */
+    margin-left: -10%;
     margin-top: 2%;
   }
 
@@ -563,15 +560,29 @@ body {
 
   .author__name {
     margin-top: 2%;
+    margin-left: -20%;
   }
 
   #name2 {
     font-size: 20px;
-    margin-left: -50%;
+    margin-left: -70%;
   }
 
   .my_author_ul2 {
-    margin-left: -60%;
+    display: none;
+    /* margin-left: -60%; */
+  }
+
+  .my_author_ul {
+    display: none;
+  }
+
+  .hidden-s2 {
+    margin-left: -40%;
+  }
+
+  .hidden-s1 {
+    margin-left: 10%;
   }
 }
 
@@ -598,6 +609,27 @@ body {
 
 .my_author_ul2 {
   list-style-type: none;
-=======
->>>>>>> c1acb78689d703bf2b4ee5e04094a409c99d91ae
+  =======>>>>>>>c1acb78689d703bf2b4ee5e04094a409c99d91ae
+}
+
+.my_author_ul {
+  list-style-type: none;
+  width: 150%;
+  margin-left: 20%;
+}
+
+.top3 {
+  margin-left: 15%;
+}
+
+.author__name {
+  width: 300px;
+}
+
+a {
+  cursor: pointer;
+}
+
+*:not(a) {
+  cursor: auto;
 }
