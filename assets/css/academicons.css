@@ -466,17 +466,15 @@ a:hover {
   .myhidden {
     display: none;
   }
-
-
 }
 
-<<<<<<< HEAD=======@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .professor2 {
     margin-left: 3%;
   }
 }
 
->>>>>>>c1acb78689d703bf2b4ee5e04094a409c99d91ae .myh3 {
+.myh3 {
   white-space: nowrap !important;
 }
 
@@ -494,7 +492,6 @@ a:hover {
 
 .co {
   list-style-type: none;
-  <<<<<<< HEAD
 }
 
 .my_author_ul {
@@ -662,7 +659,7 @@ h3 {
   .li-test2 {
     max-width: 100%;
     width: 100%;
-    margin-left: 0%;
+    margin-left: 0;
   }
 }
 
@@ -689,7 +686,6 @@ h3 {
 
 .my_author_ul2 {
   list-style-type: none;
-  =======>>>>>>>c1acb78689d703bf2b4ee5e04094a409c99d91ae
 }
 
 .my_author_ul {
