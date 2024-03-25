@@ -537,14 +537,14 @@ body {
 
 .li-text {
   float: left;
-  width: 75%;
+  width: 68%;
 }
 
 .li-img {
   float: left;
   /* max-width: 20%; */
   height: auto;
-  width: 20%;
+  width: 30%;
   margin-left: 2%;
   object-fit: contain !important;
   /* margin-top: -5%; */
@@ -666,7 +666,7 @@ screen and (min-resolution: 1.25dppx) and (max-resolution: 1.5dppx) {
 
   .li-img {
     max-width: 70%;
-    width: 600px;
+    width: 40%;  /* 500px */
     margin-top: 2%;
   }
 
