@@ -145,15 +145,25 @@
 
               <ul class="myul">
                 <li>
-                  <i class="myh3">大模型推理服务</i>：巨大的内存消耗和不可预测的输出长度，为 LLM 应用带来了新的挑战。 我们设计了 LLM 推理系统（qLLM、tgLLM），降低了 LLM
-                  请求的作业完成时间，并提高了模型吞吐量和资源利用率。 我们还构建了多个推理系统（InferRAG、InferMM）来管理 RAG 和多模态等场景下的GPU计算资源。
+                  <span class="li-text2">
+                    <i class="myh3">大模型推理服务</i>：巨大的内存消耗和不可预测的输出长度，为 LLM 应用带来了新的挑战。 我们设计了 LLM 推理系统（qLLM、tgLLM），降低了 LLM
+                    请求的作业完成时间，并提高了模型吞吐量和资源利用率。 我们还构建了多个推理系统（InferRAG、InferMM）来管理 RAG 和多模态等场景下的GPU计算资源。
+                  </span>
+                  <span class="li-img2">
+                    <img src="images/DNN_infernet.png" alt="">
+                  </span>
                 </li>
               </ul>
 
               <ul class="myul">
                 <li>
-                  <i class="myh3">大模型架构及应用</i>: 近期 LLM 架构的创新也带来了新的挑战。
-                  我们设计了推理系统（SpecInfer、ParaMoE）来优化推测解码和混合专家的推理效率。此外，我们还研究了前向解码、LoRA 服务、kv-cache 压缩等优化问题。
+                  <span class="li-text2">
+                    <i class="myh3">大模型架构及应用</i>: 近期 LLM 架构的创新也带来了新的挑战。
+                    我们设计了推理系统（SpecInfer、ParaMoE）来优化推测解码和混合专家的推理效率。此外，我们还研究了前向解码、LoRA 服务、kv-cache 压缩等优化问题。
+                  </span>
+                  <span class="li-img2">
+                    <img src="images/DNN_infernet.png" alt="">
+                  </span>
                 </li>
               </ul>
             </li>
@@ -162,21 +172,34 @@
 
               <ul class="myul">
                 <li>
-                  <i class="myh3">低时延推理服务</i>：为了保证良好的用户体验，基于 DNN 的应用通常有一个时延目标。
-                  我们设计了多个 DNN
-                  推理系统（Harpagon、DeepLat、TopInfer），通过动态批处理、请求分派和配置解耦等技术，最大限度地降低了延迟目标下的服务成本。我们还构建了多个弹性扩缩容系统（SLOpt、DeepChain），通过
-                  AoT 编译和模型预热等技术，在突发工作负载下最大化系统吞吐量。
+                  <span class="li-text2">
+                    <i class="myh3">低时延推理服务</i>：为了保证良好的用户体验，基于 DNN 的应用通常有一个时延目标。
+                    我们设计了多个 DNN
+                    推理系统（Harpagon、DeepLat、TopInfer），通过动态批处理、请求分派和配置解耦等技术，最大限度地降低了延迟目标下的服务成本。我们还构建了多个弹性扩缩容系统（SLOpt、DeepChain），通过
+                    AoT 编译和模型预热等技术，在突发工作负载下最大化系统吞吐量。
+                  </span>
+                  <span class="li-img2">
+                    <img src="images/DNN_infernet.png" alt="">
+                  </span>
+
                 </li>
               </ul>
 
               <ul class="myul">
                 <li>
-                  <i class="myh3">复杂应用场景</i>：在不同场景下，基于 DNN 的应用程序面临着各种部署要求。
-                  我们设计了多级推理系统（<a href="https://dl.acm.org/doi/abs/10.1145/3472883.3486993">Scrooge</a>、<a
-                    href="https://dl.acm.org/doi/abs/10.1145/3450268.3453521">Rim</a>、<a
-                    href="https://dl.acm.org/doi/abs/10.1145/3274808.3274813">Olympian</a>），通过批处理和模型动态升/降级等技术来管理云边端 GPU
-                  集群中的 DNN 模型。我们还构建了多个专用系统（<a href="https://dl.acm.org/doi/abs/10.1145/2971648.2971674">ALPS</a>、<a
-                    href="https://ieeexplore.ieee.org/abstract/document/10188703">HRL</a>）来处理复杂的场景，例如多模态输入和异构硬件。
+                  <span class="li-text2">
+                    <i class="myh3">复杂应用场景</i>：在不同场景下，基于 DNN 的应用程序面临着各种部署要求。
+                    我们设计了多级推理系统（<a href="https://dl.acm.org/doi/abs/10.1145/3472883.3486993">Scrooge</a>、<a
+                      href="https://dl.acm.org/doi/abs/10.1145/3450268.3453521">Rim</a>、<a
+                      href="https://dl.acm.org/doi/abs/10.1145/3274808.3274813">Olympian</a>），通过批处理和模型动态升/降级等技术来管理云边端
+                    GPU
+                    集群中的 DNN 模型。我们还构建了多个专用系统（<a href="https://dl.acm.org/doi/abs/10.1145/2971648.2971674">ALPS</a>、<a
+                      href="https://ieeexplore.ieee.org/abstract/document/10188703">HRL</a>）来处理复杂的场景，例如多模态输入和异构硬件。
+                  </span>
+                  <span class="li-img2">
+                    <img src="images/DNN_infernet.png" alt="">
+                  </span>
+
                 </li>
               </ul>
           </ul>
