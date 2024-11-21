@@ -424,6 +424,11 @@
   color: red;
 }
 
+.bestpaper {
+  font-size: 16px;
+  color: red;
+}
+
 .someone {
   white-space: nowrap;
 }
