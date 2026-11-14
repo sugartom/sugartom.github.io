@@ -1,0 +1,158 @@
+[
+  {
+    "id": "rewy-release",
+    "date": "2026-11",
+    "label": "Nov 2026",
+    "html": "<a href=\"#paper-rewy\"><strong>ReWY</strong></a> is now available! It streamlines Delta-Rule Attention backpropagation in hybrid models, reducing local WY backward matrix multiplications from <strong>7 to 3</strong> and reusing shared gradient intermediates. It accelerates DeltaNet, GDN, KDA, and GDN2 operators by <strong>1.25–2.89×</strong> on NVIDIA GPUs and Ascend NPUs. The paper and code are publicly available—give it a try! <a href=\"https://arxiv.org/abs/2611.01940\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a> · <a href=\"https://github.com/flashserve/ReWY\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14",
+    "technical_sources": [
+      "https://arxiv.org/abs/2611.01940",
+      "https://github.com/flashserve/ReWY"
+    ],
+    "performance_note": "The 1.25–2.89× range is the owner-provided summary for this news item. The current arXiv v2 abstract reports platform- and policy-specific ranges (GPU 1.15–1.81×; Ascend 1.09–2.89×). Do not treat these benchmark scopes as identical."
+  },
+  {
+    "id": "isca-pc",
+    "date": "2026-11",
+    "label": "Nov 2026",
+    "html": "Invited to serve on the Program Committee of <strong>ISCA 2027 (CCF-A)</strong>. Looking forward to contributing to the computer architecture community!",
+    "source": "Owner-provided event date and content, 2026-11-14; conference year retained from the existing Professional Activities section."
+  },
+  {
+    "id": "flexkv-acceptance",
+    "date": "2026-10",
+    "label": "Oct 2026",
+    "html": "<a href=\"#paper-flexkv\"><strong>FlexKV</strong></a> has been accepted to <strong>IEEE Transactions on Parallel and Distributed Systems (TPDS)</strong>! It enables resource-efficient remote KV-cache reuse for low-latency LLM inference. <a href=\"https://doi.org/10.1109/TPDS.2026.3746050\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a>.",
+    "source": "Acceptance month explicitly confirmed by owner on 2026-11-14; description based on existing publication metadata."
+  },
+  {
+    "id": "oled-moe-acceptance",
+    "date": "2026-08",
+    "label": "Aug 2026",
+    "html": "<a href=\"#paper-oled-moe\"><strong>OLED-MoE</strong></a> has been accepted to <strong>EuroSys 2027</strong>. Congratulations to <strong>Jingyuan and Jiayue</strong>! For memory-constrained MoE-based diffusion LLMs, it exploits expert locality across adjacent denoising iterations to predict and retain high-value experts, reducing CPU–GPU transfers and cache thrashing for faster inference. The paper and code are publicly available. <a href=\"https://arxiv.org/abs/2609.33385\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a> · <a href=\"https://github.com/flashserve/OLED-MoE\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14",
+    "technical_sources": [
+      "https://arxiv.org/abs/2609.33385"
+    ]
+  },
+  {
+    "id": "ragpulse-acceptance",
+    "date": "2026-08",
+    "label": "Aug 2026",
+    "html": "<a href=\"#paper-ragpulse\"><strong>RAGPulse</strong></a> has been accepted to <strong>EMNLP 2026</strong>! Our real-world RAG workload captures authentic temporal reuse patterns for efficient serving. <a href=\"https://arxiv.org/abs/2511.12979\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a> · <a href=\"https://github.com/flashserve/RAGPulse\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a> · <a href=\"https://huggingface.co/datasets/flashserve/RAGPulse\" target=\"_blank\" rel=\"noopener noreferrer\">Dataset</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "nsfc-category-b",
+    "date": "2026-08",
+    "label": "Aug 2026",
+    "html": "My proposal has been approved for support from the <strong>NSFC Young Scientists Fund (Category B)</strong>. Grateful for the support for our research!",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "masters-graduation",
+    "date": "2026-06",
+    "label": "Jun 2026",
+    "html": "Congratulations to my master’s students <strong>Chen Shen and Ziqi Gong</strong> on their graduation! Thank you for your hard work and contributions to our group. Wishing you both all the best for the future!",
+    "source": "Owner-provided event date and content, 2026-11-14",
+    "identity_source": "Existing Students/Alumni section: Chen Shen and Ziqi Gong; graduation month confirmed by owner."
+  },
+  {
+    "id": "icml-acceptances",
+    "date": "2026-05",
+    "label": "May 2026",
+    "html": "<a href=\"#paper-mosaic\"><strong>Mosaic</strong></a> and <a href=\"#paper-kernelband\"><strong>KernelBand</strong></a> have been accepted to <strong>ICML 2026</strong>, advancing long-context diffusion LLM inference and hardware-aware kernel optimization. Congratulations to <strong>Liang and Dezhi</strong>!",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "hpca-pc",
+    "date": "2026-05",
+    "label": "May 2026",
+    "html": "Invited to serve on the Program Committee of <strong>HPCA 2027 (CCF-A)</strong>.",
+    "source": "Owner-provided event date and content, 2026-11-14; conference year retained from the existing Professional Activities section."
+  },
+  {
+    "id": "infocom-pc",
+    "date": "2026-05",
+    "label": "May 2026",
+    "html": "Invited to serve on the Program Committee of <strong>INFOCOM 2027 (CCF-A)</strong>.",
+    "source": "Owner-provided event date and content, 2026-11-14; conference year retained from the existing Professional Activities section."
+  },
+  {
+    "id": "vida-acceptance",
+    "date": "2026-04",
+    "label": "Apr 2026",
+    "html": "<a href=\"#paper-vida\"><strong>ViDA</strong></a> has been accepted to <strong>IEEE Transactions on Parallel and Distributed Systems (TPDS)</strong>! It accelerates video question answering through selective sparse self-speculation while preserving exact model outputs. <a href=\"https://ieeexplore.ieee.org/document/11481626\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a>.",
+    "source": "Acceptance month explicitly confirmed by owner on 2026-11-14; description based on existing publication metadata."
+  },
+  {
+    "id": "flash-linear-attention-npu-release",
+    "date": "2026-03",
+    "label": "Mar 2026",
+    "html": "<a href=\"https://github.com/flashserve/flash-linear-attention-npu\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>flash-linear-attention-npu</strong></a> is officially released! It provides efficient linear-attention implementations for <strong>Ascend NPUs</strong>. The code is publicly available—give it a try!",
+    "source": "Owner-confirmed official launch month and project description, 2026-11-14",
+    "technical_sources": [
+      "https://github.com/flashserve/flash-linear-attention-npu"
+    ]
+  },
+  {
+    "id": "pard-acceptance",
+    "date": "2026-01",
+    "label": "Jan 2026",
+    "html": "<a href=\"#paper-pard\"><strong>PARD</strong></a> has been accepted to <strong>EuroSys 2026</strong>! It improves inference-pipeline goodput through proactive request dropping, combining timely dropping decisions with adaptive request priorities. <a href=\"https://dl.acm.org/doi/10.1145/3767295.3803581\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "tc-ae",
+    "date": "2026-01",
+    "label": "Jan 2026",
+    "html": "Invited to serve as an <strong>Associate Editor</strong> of <strong>IEEE Transactions on Computers (TC, CCF-A)</strong>. Honored to contribute to the journal and the computing community.",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "xiaomi-young-scholar",
+    "date": "2025-12",
+    "label": "Dec 2025",
+    "html": "Honored to receive the <strong>Xiaomi Young Scholar</strong> award. Grateful for the support for our research!",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "pat-announcement",
+    "date": "2025-11",
+    "label": "Nov 2025",
+    "html": "<a href=\"#paper-pat\"><strong>PAT</strong></a> will appear at <strong>ASPLOS 2026</strong>. Congratulations to <strong>Jinjun and Zhixin</strong>! PAT exploits hierarchical shared prefixes to eliminate redundant KV-cache reads during decoding, easing memory-bandwidth pressure and reducing time per output token (TPOT). Its vLLM-compatible plugin can be enabled with a one-line change. The paper and code are publicly available. <a href=\"https://dl.acm.org/doi/abs/10.1145/3779212.3790200\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a> · <a href=\"https://github.com/flashserve/PAT\" target=\"_blank\" rel=\"noopener noreferrer\">Code</a> · <a href=\"slides/ASPLOS26_PAT_Prefix_Aware_Attention.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">Slides</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14",
+    "technical_sources": [
+      "https://github.com/flashserve/PAT"
+    ],
+    "integration_note": "The public README describes one-line environment-variable configuration after plugin installation; the news uses “one-line change” rather than claiming a new application API."
+  },
+  {
+    "id": "xiaotian-launch",
+    "date": "2025-09",
+    "label": "Sep 2025",
+    "html": "<a href=\"https://student.tju.edu.cn/ai\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Xiaotian</strong></a>, our official AI mentor, is available to all students at Tianjin University.",
+    "source": "Original homepage explicitly states September 2025."
+  },
+  {
+    "id": "nature-acceptance",
+    "date": "2025-08",
+    "label": "Aug 2025",
+    "html": "Our work on <a href=\"#paper-delocalized-electrolyte-design-enables-600\"><strong>delocalized electrolyte design for high-energy lithium metal batteries</strong></a> has been accepted by <strong>Nature</strong>. Congratulations to all our collaborators! <a href=\"https://www.nature.com/articles/s41586-025-09382-4\" target=\"_blank\" rel=\"noopener noreferrer\">Paper</a>.",
+    "source": "Owner-provided event date and content, 2026-11-14"
+  },
+  {
+    "id": "socc-best-paper",
+    "date": "2024-11",
+    "label": "Nov 2024",
+    "html": "Our <a href=\"#paper-pre-warming-is-not-enough\">serverless inference paper</a> received the <strong>Best Paper Award at ACM SoCC 2024</strong>.",
+    "source": "Owner explicitly confirmed the Best Paper Award was received in November 2024, on 2026-11-14."
+  },
+  {
+    "id": "twen-launch",
+    "date": "2024-04",
+    "label": "Apr 2024",
+    "html": "Launched <a href=\"https://twen.ai/\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Twen.ai</strong></a>, a university Q&A large language model powered by retrieval-augmented generation.",
+    "source": "Retained from original homepage; April 2024 launch."
+  }
+]

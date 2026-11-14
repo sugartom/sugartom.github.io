@@ -1,0 +1,1270 @@
+[
+  {
+    "id": "oled-moe",
+    "venue": "EuroSys",
+    "year": 2027,
+    "title": "OLED-MoE: Accelerating MoE-Based dLLM Inference via Inter-Iteration Locality-Aware Expert Offloading",
+    "ccf": "A",
+    "links": {
+      "paper": "https://arxiv.org/abs/2609.33385",
+      "code": "https://github.com/flashserve/OLED-MoE"
+    },
+    "authors": [
+      "Xiao, Jingyuan",
+      "Wang, Jiayue",
+      "Hu, Yitao",
+      "Wang, Xinning",
+      "Chen, Shi",
+      "Gong, Ziqi",
+      "Wang, Zhengchao",
+      "Yang, Guotao",
+      "Chen, Sheng",
+      "Li, Keqiu"
+    ],
+    "abstract": "Semi-autoregressive diffusion large language models (dLLMs) improve decoding parallelism through iterative block-wise denoising, but scaling them with mixture-of-experts (MoE) layers introduces a large expert parameter footprint that exceeds memory-constrained GPU capacity. Expert offloading is a natural remedy, yet existing MoE serving systems target autoregressive decoding and rely on intra-iteration layer-wise prefetching: while computing one layer, they predict and load experts for subsequent layers. Under dLLM inference, block-wise routing expands the active expert working set within each iteration, making such prefetches difficult to complete in time and costly when mispredicted. Consequently, existing prefetch-based solutions often degenerate into on-demand expert loading with high decoding latency. We propose OLED-MoE, an expert offloading system that shifts the optimization target from intra-iteration prefetching to inter-iteration expert retention. Its key insight is that adjacent denoising iterations exhibit strong expert routing overlap, and token confidence indicates which experts are likely to be reused. OLED-MoE uses confidence-guided inter-iteration prediction to retain high-value experts in GPU memory without introducing extra prefetch traffic. It further compensates unavoidable cache misses through CPU-GPU cooperative execution, jointly considering dynamic expert computation load and predicted future reuse. Across diverse dLLM workloads, OLED-MoE reduces time per output token (TPOT) by 1.23x-7.93x and improves expert cache utilization by 1.44x-4.23x over state-of-the-art offloading systems. Notably, OLED-MoE approaches full-residency performance while using only 40% of the expert GPU memory, incurring merely 23% higher TPOT despite a 60% reduction in expert memory footprint. OLED-MoE's source code is publicly available at the linked project repository .",
+    "bibtex": "",
+    "award": null,
+    "order": 0,
+    "sources": [
+      "https://arxiv.org/abs/2609.33385"
+    ],
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2609.33385",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2609.33385"
+    },
+    "date": "2026-09-27",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2609.33385",
+      "page": 1,
+      "quote": "Author block: Yitao Hu∗; footnote: ∗Corresponding author."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "mosaic",
+    "venue": "ICML",
+    "year": 2026,
+    "title": "Mosaic: Unlocking Over 30X Context Length for Diffusion LLMs Inference via Global Memory Planning and Dynamic Peak Taming",
+    "ccf": "A",
+    "links": {
+      "paper": "https://arxiv.org/abs/2601.06562",
+      "code": "https://github.com/flashserve/Mosaic"
+    },
+    "authors": [
+      "Zheng, Liang",
+      "Shi, Bowen",
+      "Hu, Yitao",
+      "Zhang, Jiawei",
+      "Li, Ruofan",
+      "Yang, Guotao",
+      "Zhao, Zhixin",
+      "Wang, Zhengchao",
+      "Chen, Sheng",
+      "Li, Wenxin",
+      "Ran, Dezhi",
+      "Xie, Tao",
+      "Li, Keqiu"
+    ],
+    "abstract": "Diffusion-based large language models (dLLMs) have emerged as a promising alternative to autoregressive models, leveraging simultaneous denoising to enable global planning and iterative refinement. These properties make dLLMs attractive for long-context generation. However, deploying dLLMs faces a prohibitive memory barrier, as existing inference systems are inefficient for the diffusion paradigm. We observe that current inference systems are misaligned with dLLMs. Unlike autoregressive models, whose memory footprint is dominated by the KV-Cache, dLLMs are bottlenecked by transient activations rematerialized per step. Moreover, generic memory reuse mechanisms lack the global visibility to handle dynamic memory peaks of dLLMs, which alternate between logits and feed-forward networks. To address these challenges, we present Mosaic, a memory-efficient inference system that shifts dLLM execution from local, static management to a global, dynamic paradigm. Mosaic integrates (i) a mask-only logits kernel eliminating redundant activation materialization, (ii) a lazy chunking optimizer using online heuristics to tame dynamic memory peaks, and (iii) a global memory manager leveraging virtual addressing to mitigate memory fragmentation. Evaluations show that Mosaic reduces the memory peak-to-average ratio by 2.71× on average and increases the maximum inference sequence length on identical hardware by 15.30-32.34×. Crucially, Mosaic is training-free and preserves exact model outputs, while reducing end-to-end latency by 2.5%-55.4%. Our code is publicly available at the linked project repository .",
+    "bibtex": "",
+    "award": null,
+    "order": 1,
+    "sources": [
+      "https://arxiv.org/abs/2601.06562",
+      "https://icml.cc/Conferences/2026/Dates"
+    ],
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2601.06562",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2601.06562"
+    },
+    "date": "2026-01-10",
+    "sort_date": "2026-07-07",
+    "sort_date_note": "ICML 2026 main conference date; arXiv date remains in citation metadata.",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "owner_confirmed",
+      "source": "Owner confirmation, 2026-11-14",
+      "quote": "The owner explicitly confirmed Yitao Hu as corresponding author.",
+      "earlier_version_evidence": {
+        "status": "verified_earlier_version",
+        "source_url": "https://arxiv.org/pdf/2601.06562v1",
+        "page": 1,
+        "quote": "1Tianjin University, China. Correspondence to: Yitao Hu <yitao@tju.edu.cn>.",
+        "note": "Web-accessible arXiv v1 explicitly identifies Yitao Hu. Latest PDF downloaded locally has expanded author list and no correspondence footnote; preserve version provenance. Explicit v1 PDF separately downloaded and confirmed during this audit."
+      }
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "kernelband",
+    "venue": "ICML",
+    "year": 2026,
+    "title": "KernelBand: Boosting LLM-based Kernel Optimization with a Hierarchical and Hardware-aware Multi-armed Bandit",
+    "ccf": "A",
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.18868"
+    },
+    "authors": [
+      "Ran, Dezhi",
+      "Xie, Shuxiao",
+      "Ji, Mingfang",
+      "Liu, Anmin",
+      "Wu, Mengzhou",
+      "Cao, Yuan",
+      "Guo, Yuzhe",
+      "Yu, Hao",
+      "Li, Linyi",
+      "Hu, Yitao",
+      "Yang, Wei",
+      "Xie, Tao"
+    ],
+    "abstract": "High-performance GPU kernels are critical for efficient LLM serving, yet their optimization remains a bottleneck requiring deep system expertise. While code LLMs show promise in generating functionally correct code, kernel optimization is intrinsically a search problem over a vast optimization space. The fundamental mismatch prevents existing LLM agents from efficiently exploring the optimization space for diverse hardware and compute patterns. To bridge the gap, we present KernelBand, a framework that formulates kernel optimization as a Multi-Armed Bandit (MAB) problem, explicitly balancing exploration and exploitation to unlock the potential of code LLMs. To navigate the infinite arm space of optimization strategies applied to candidate kernels, we design two key mechanisms: a hardware-aware pruning strategy via profiling bounds and a trace-driven clustering algorithm that leverages Lipschitz continuity. Theoretically, we prove that KernelBand reduces the regret bound to depend on the compact covering number of runtime clusters, ensuring sample-efficient discovery of high-performance kernels. Extensive experiments on TritonBench-G with three GPU architectures and four code LLMs show that KernelBand consistently and substantially outperforms state-of-the-art methods with over 33% average improvement.",
+    "bibtex": "",
+    "award": null,
+    "order": 2,
+    "sources": [
+      "https://arxiv.org/abs/2511.18868",
+      "https://icml.cc/Conferences/2026/Dates"
+    ],
+    "citation": {
+      "type": "misc",
+      "year": 2025,
+      "eprint": "2511.18868",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2511.18868"
+    },
+    "date": "2025-11-24",
+    "sort_date": "2026-07-07",
+    "sort_date_note": "ICML 2026 main conference date; arXiv date remains in citation metadata.",
+    "corresponding_authors": [
+      "Tao Xie"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2511.18868",
+      "page": 1,
+      "quote": "Correspondence to: Tao Xie <taoxie@pku.edu.cn>.",
+      "note": "Dezhi Ran and Shuxiao Xie have equal-contribution marks, not corresponding-author marks."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "pard",
+    "venue": "EuroSys",
+    "year": 2026,
+    "title": "PARD: Enhancing Goodput for Inference Pipeline via Proactive Request Dropping",
+    "ccf": "A",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3767295.3803581"
+    },
+    "authors": [
+      "Zhixin Zhao",
+      "Yitao Hu",
+      "Simin Chen",
+      "Mingfang Ji",
+      "Wei Yang",
+      "Yuhao Zhang",
+      "Laiping Zhao",
+      "Wenxin Li",
+      "Xiulong Liu",
+      "Wenyu Qu",
+      "Hao Wang"
+    ],
+    "abstract": "Modern deep neural network (DNN) applications integrate multiple DNN models into inference pipelines with stringent latency requirements for customized tasks. To mitigate extensive request timeouts caused by accumulation, systems for inference pipelines commonly drop a subset of requests so the remaining ones can satisfy latency constraints. Since it is commonly believed that request dropping adversely affects goodput, existing systems only drop requests when they have to, which we call reactive dropping. However, this reactive policy can not maintain high goodput, as it neither makes timely dropping decisions nor identifies the proper set of requests to drop, leading to issues of dropping requests too late or dropping the wrong set of requests. We propose that the inference system should proactively drop certain requests in advance to enhance the goodput across the entire workload. To achieve this, we design an inference system PARD. It enhances goodput with timely and precise dropping decisions by integrating a proactive dropping method that decides when to drop requests using runtime information of the inference pipeline, and an adaptive request priority mechanism that selects which specific requests to drop based on remaining latency budgets and workload intensity. Evaluation on a cluster of 64 GPUs over real-world workloads shows that PARD achieves 16%-176% higher goodput than the state of the art while reducing the drop rate and wasted computation resources by 1.6×-17× and 1.5×-62× respectively.",
+    "bibtex": "",
+    "award": null,
+    "order": 3,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3767295.3803581",
+      "https://arxiv.org/abs/2602.08747"
+    ],
+    "citation": {
+      "type": "inproceedings",
+      "year": 2026,
+      "doi": "10.1145/3767295.3803581",
+      "container": "Proceedings of the 21st European Conference on Computer Systems",
+      "volume": null,
+      "number": null,
+      "pages": "423-438",
+      "url": "https://doi.org/10.1145/3767295.3803581"
+    },
+    "date": "2026-04-26",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://dl.acm.org/doi/10.1145/3767295.3803581",
+      "page": 1,
+      "quote": "Author block: Yitao Hu∗; footnote: ∗Corresponding author."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "pat",
+    "venue": "ASPLOS",
+    "year": 2026,
+    "title": "PAT: Accelerating LLM Decoding via Prefix-Aware Attention with Resource Efficient Multi-Tile Kernel",
+    "ccf": "A",
+    "links": {
+      "paper": "https://dl.acm.org/doi/abs/10.1145/3779212.3790200",
+      "code": "https://github.com/flashserve/PAT",
+      "slides": "slides/ASPLOS26_PAT_Prefix_Aware_Attention.pdf"
+    },
+    "authors": [
+      "Jinjun Yi",
+      "Zhixin Zhao",
+      "Yitao Hu",
+      "Ke Yan",
+      "Weiwei Sun",
+      "Hao Wang",
+      "Laiping Zhao",
+      "Yuhao Zhang",
+      "Wenxin Li",
+      "Keqiu Li"
+    ],
+    "abstract": "LLM serving is increasingly dominated by decode attention, which is a memory-bound operation due to massive KV cache loading from global memory. Meanwhile, real-world workloads exhibit substantial, hierarchical shared prefixes across requests (e.g., system prompts, tools/templates, RAG). Existing attention implementations fail to fully exploit prefix sharing: one-query-per-CTA execution repeatedly loads shared prefix KV cache, while one-size-fits-all tiling leaves on-chip resources idle and exacerbates bubbles for uneven KV lengths. These choices amplify memory bandwidth pressure and stall memory-bound decode attention. This paper introduces PAT, a prefix-aware attention kernel implementation for LLM decoding that organizes execution with a pack-forward-merge paradigm. PAT packs queries by shared prefix to reduce repeated memory accesses, runs a customized multi-tile kernel to achieve high resource efficiency. It further applies practical multi-stream forwarding and KV splitting to reduce resource bubbles. The final merge performs online softmax with negligible overhead. We implement PAT as an off-the-shelf plugin for vLLM. Evaluation on both real-world and synthetic workloads shows that PAT reduces attention latency by 53.5% on average and TPOT by 17.0-93.1% under the same configurations against state-of-the-art attention kernels. PAT's source code is publicly available at the linked project repository .",
+    "bibtex": "",
+    "award": null,
+    "order": 4,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3779212.3790200",
+      "https://arxiv.org/abs/2511.22333"
+    ],
+    "citation": {
+      "type": "inproceedings",
+      "year": 2026,
+      "doi": "10.1145/3779212.3790200",
+      "container": "Proceedings of the 31st ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 2",
+      "volume": null,
+      "number": null,
+      "pages": "1396-1412",
+      "url": "https://doi.org/10.1145/3779212.3790200"
+    },
+    "date": "2026-03-22",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://dl.acm.org/doi/10.1145/3779212.3790200",
+      "page": 1,
+      "quote": "Author block: Yitao Hu∗; footnotes: †Both authors contributed equally to this work. ∗Corresponding author."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "ragpulse",
+    "venue": "EMNLP",
+    "year": 2026,
+    "title": "RAGPulse: A Real-World RAG Workload Capturing Authentic Temporal Reuse Patterns for Efficient Serving",
+    "ccf": "B",
+    "links": {
+      "paper": "https://arxiv.org/abs/2511.12979",
+      "code": "https://github.com/flashserve/RAGPulse",
+      "huggingface": "https://huggingface.co/datasets/flashserve/RAGPulse"
+    },
+    "authors": [
+      "Wang, Zhengchao",
+      "Hu, Yitao",
+      "Ye, Jianing",
+      "Chang, Zhuxuan",
+      "Yu, Jiazheng",
+      "Deng, Youpeng",
+      "Li, Keqiu"
+    ],
+    "abstract": "Retrieval-Augmented Generation (RAG) is a critical paradigm for building reliable, knowledge-intensive Large Language Model (LLM) applications. However, the multi-stage pipeline (retrieve, generate) and unique workload characteristics (e.g., knowledge dependency) of RAG systems pose significant challenges for serving performance optimization. Existing generic LLM inference traces fail to capture these RAG-specific dynamics, creating a significant performance gap between academic research and real-world deployment. To bridge this gap, this paper introduces RAGPulse, an open-source RAG workload trace dataset. This dataset was collected from an university-wide Q&A system serving that has served more than 40,000 students and faculties since April 2024. We detail RAGPulse's system architecture, its privacy-preserving hash-based data format, and provide an in-depth statistical analysis. Our analysis reveals that real-world RAG workloads exhibit significant temporal locality and a highly skewed hot document access pattern. RAGPulse provides a high-fidelity foundation for researchers to develop and validate novel optimization strategies for RAG systems, such as content-aware batching and retrieval caching, ultimately enhancing the efficiency and reliability of RAG services. The code is available at the linked project repository .",
+    "bibtex": "",
+    "award": null,
+    "order": 5,
+    "sources": [
+      "https://arxiv.org/abs/2511.12979",
+      "https://2026.emnlp.org/registration/"
+    ],
+    "citation": {
+      "type": "misc",
+      "year": 2025,
+      "eprint": "2511.12979",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2511.12979"
+    },
+    "date": "2025-11-17",
+    "sort_date": "2026-10-24",
+    "sort_date_note": "EMNLP 2026 conference date; arXiv date remains in citation metadata.",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2511.12979",
+      "page": 1,
+      "quote": "∗Corresponding author: Yitao Hu (email: yitao@tju.edu.cn)."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "flexkv",
+    "venue": "TPDS",
+    "year": 2026,
+    "title": "FlexKV: Resource-Efficient Remote KV Reuse for Low-Latency LLM Inference",
+    "ccf": "A",
+    "links": {
+      "paper": "https://doi.org/10.1109/TPDS.2026.3746050"
+    },
+    "authors": [
+      "Guotao Yang",
+      "Xinpei Wang",
+      "Yitao Hu",
+      "Longfei Yin",
+      "Zhengchao Wang",
+      "Rui Guo",
+      "Sheng Chen",
+      "Keqiu Li"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated exceptional performance across a variety of online services, which require real-time responses with low time-to-first-token (TTFT). To reduce TTFT, existing works commonly reuse the KV cache for requests sharing identical prefixes and leverage remote KV caches to increase the reuse rate. Existing remote KV-cache reuse policies, which we call resource-insensitive reuse policies, assume the network is stable and ignore real-time resource fluctuations. However, such policies cannot maintain low TTFT, as they neither make dynamic selections among different reuse representations nor leverage hybrid reuse to increase resource utilization, leading to significant waste of compute and transfer resources. We propose that an efficient LLM inference system should adopt a resource-efficient KV-cache reuse policy to reduce TTFT. To do so, we design an LLM inference system, FlexKV, which decreases TTFT while achieving high resource utilization by integrating two novel components: an adaptive Hybrid Adapter that chooses which reuse approaches to utilize, and a layer-wise Pipeline Scheduler that coordinates multiple compute and transfer operations. Evaluation across 14 unique model–workload combinations spanning 6.7B to 65B models, including a multi-node LLaMA-65B-GPTQ deployment, shows that FlexKV achieves up to a 4.90× TTFT speedup over evaluated deployable baselines. Compared with the analytical Optimal reference, FlexKV has a median TTFT gap of 8.10%.",
+    "bibtex": "",
+    "award": null,
+    "order": 6,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tpds.2026.3746050",
+      "https://xplorestaging.ieee.org/document/11744452/"
+    ],
+    "citation": {
+      "type": "article",
+      "year": 2026,
+      "doi": "10.1109/tpds.2026.3746050",
+      "container": "IEEE Transactions on Parallel and Distributed Systems",
+      "volume": "37",
+      "number": "12",
+      "pages": "2867-2880",
+      "url": "https://doi.org/10.1109/tpds.2026.3746050"
+    },
+    "date": "2026-12",
+    "sort_date": "2026-10-21",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "owner_confirmed",
+      "source": "Owner confirmation, 2026-11-14",
+      "quote": "The owner explicitly confirmed Yitao Hu as corresponding author."
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "vida",
+    "venue": "TPDS",
+    "year": 2026,
+    "title": "ViDA: Lossless VideoQA Acceleration via Selective Sparse Self-Speculation with Parallel Computational Load Management",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/11481626"
+    },
+    "authors": [
+      "Liang Zheng",
+      "Yitao Hu",
+      "Chen Shen",
+      "Zhixin Zhao",
+      "Bowen Shi",
+      "Yuhao Zhang",
+      "Laiping Zhao",
+      "Wenxin Li",
+      "Keqiu Li"
+    ],
+    "abstract": "Video large language models (VideoLLMs) have significantly advanced video question answering (VideoQA) applications, which demand both low latency and high accuracy. To meet the requirements, VideoLLMs are typically deployed on GPUs for parallel acceleration. However, the massive computational load from long video contexts often makes such acceleration insufficient. Existing techniques like token pruning and speculative decoding attempt to address this challenge by altering the computational load, but often fail to balance both speed and accuracy. Sparse self-speculation mitigates these limitations via selecting a subset of tokens on a specific token budget to draft the output and then verify it using all tokens. However, existing sparse self-speculation is designed for text-based scenarios and cannot be directly applied to VideoQA tasks, as it fails to account for discrepancies in critical multimodal tokens and the dynamic nature of optimal token budget in VideoQA, leading to suboptimal scale and inappropriate composition of parallel computational load. We argue that achieving both high accuracy and low latency in VideoQA tasks requires managing the computational load with awareness of these discrepancies and dynamics. To achieve this, we introduce ViDA, a selective sparse self-speculation inference system. It progressively searches token budgets by iteratively refining lower and upper bounds of search space derived from long contexts, aiming to find and allocate varying optimal budgets in real-time adaptively. Additionally, it leverages insights from discrepancies in critical multimodal tokens to perform a discrepancy-aware token selection approach for identifying critical tokens. Evaluations across various VideoQA workloads show that compared to state-of-the-art methods, ViDA preserves exact model outputs while reducing average time-per-output-token (TPOT) by 15% to 46% and average end-to-end latency by up to 28%, while decreasing the divergence from optimal token budget distribution by up to 93% and increasing the optimal critical token ratio by up to 380%.",
+    "bibtex": "",
+    "award": null,
+    "order": 7,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tpds.2026.3683867",
+      "Local author manuscript (verified first-page abstract)."
+    ],
+    "citation": {
+      "type": "article",
+      "year": 2026,
+      "doi": "10.1109/tpds.2026.3683867",
+      "container": "IEEE Transactions on Parallel and Distributed Systems",
+      "volume": "37",
+      "number": "6",
+      "pages": "1383-1399",
+      "url": "https://doi.org/10.1109/tpds.2026.3683867"
+    },
+    "date": "2026-06",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://ieeexplore.ieee.org/document/11481626",
+      "page": 1,
+      "quote": "Recommended for acceptance by E. Jeannot. (Corresponding author: Yitao Hu.)"
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "accelerating-ml-inference-via-opportunistic",
+    "venue": "TPDS",
+    "year": 2026,
+    "title": "Accelerating ML Inference via Opportunistic Pre-Loading on Serverless Clusters",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/11271332"
+    },
+    "authors": [
+      "Yifan Sui",
+      "Hanfei Yu",
+      "Yitao Hu",
+      "Jianxun Li",
+      "Hao Wang"
+    ],
+    "abstract": "Serverless computing has emerged as a novel paradigm in cloud computing, characterized by its agile scalability, cost-effective pay-as-you-go billing, and user-friendly capabilities for Machine Learning (ML) inference tasks. Developers wrap their ML algorithms into serverless functions and run them in containers. However, the well-known cold-start problem significantly slows down the response time of functions. To address cold-starts, the technique of pre-warming, which proactively maintains containers in a warm state, has gained widespread adoption across both research and industry. Nevertheless, we observed that pre-warming does not address the distinct delays caused by the loading of ML artifacts. According to our analysis, in ML inference functions, the time required to load libraries and models significantly exceeds the time needed to warm containers. Thus, relying solely on pre-warming is insufficient for mitigating cold-starts. This paper presents Tyche, an opportunistic pre-loading approach designed to eliminate the latency associated with loading ML artifacts, enabling near-instant inference and minimizing function execution time. Tyche fully leverages the idle memory in warmed containers and GPUs to pre-load required libraries and models, striking an optimal balance between acceleration and resource efficiency. Additionally, Tyche is tailored for large-scale serverless platforms, incorporating cluster-wide scheduling and lightweight locality-aware load balancing to enhance performance. We design Tyche to be transparent to providers and compatible with existing pre-warming solutions. Experiments on OpenWhisk with real-world workloads show that Tyche reduces up to 93% loading latency and achieves up to 8× speedup compared to state-of-the-art pre-warming solutions. Compared with the state-of-the-art serverless pre-loading solution, Tyche also achieves up to 1.9× speedup.",
+    "bibtex": "",
+    "award": null,
+    "order": 8,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tpds.2025.3638428",
+      "https://intellisys.haow.us/assets/pdf/Accelerating_ML_Inference_via_Opportunistic_Pre-Loading_on_Serverless_Clusters.pdf"
+    ],
+    "citation": {
+      "type": "article",
+      "year": 2026,
+      "doi": "10.1109/tpds.2025.3638428",
+      "container": "IEEE Transactions on Parallel and Distributed Systems",
+      "volume": "37",
+      "number": "2",
+      "pages": "472-488",
+      "url": "https://doi.org/10.1109/tpds.2025.3638428"
+    },
+    "date": "2026-02",
+    "corresponding_authors": [
+      "Jianxun Li"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://intellisys.haow.us/assets/pdf/Accelerating_ML_Inference_via_Opportunistic_Pre-Loading_on_Serverless_Clusters.pdf",
+      "page": 1,
+      "quote": "Recommended for acceptance by O. Ozkasap. (Corresponding author: Jianxun Li.)"
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "delocalized-electrolyte-design-enables-600",
+    "venue": "Nature",
+    "year": 2025,
+    "title": "Delocalized Electrolyte Design Enables 600 Wh kg−1 Lithium Metal Pouch Cells",
+    "ccf": null,
+    "links": {
+      "paper": "https://www.nature.com/articles/s41586-025-09382-4"
+    },
+    "authors": [
+      "Huang, He",
+      "Hu, Yitao",
+      "Hou, Yajun",
+      "Wang, Xingkai",
+      "Dong, Qiujiang",
+      "Zhao, Zhixin",
+      "Ji, Mingfang",
+      "Zhang, Wanxing",
+      "Li, Jinyang",
+      "Xie, Jianping",
+      "Guo, Hao",
+      "Han, Xiaopeng",
+      "Ouyang, Xiaoping",
+      "Hu, Wenbin"
+    ],
+    "abstract": "The development of high-energy lithium metal batteries (LMBs) is essential for advances in next-generation energy storage and electric vehicle technologies. Nevertheless, the practical applications of LMBs are constrained by current electrolyte designs that inherently rely on dominant solvation structures, preventing transformative progress in performance optimization. Here, we address this limitation through a delocalized electrolyte design that fosters a more disordered solvation microenvironment, thereby mitigating dynamic barriers and stabilizing interphases. The resulting delocalized electrolyte delivers notable energy densities of 604.2 Wh kg−1in a 5.5-Ah LiNi0.9Co0.05Mn0.05O2(Ni90)||Li pouch cell with a lean electrolyte design (1.0 g Ah−1) and 618.2 Wh kg−1in a 5.2-Ah Ni90||Li pouch cell with an ultralean electrolyte design (0.9 g Ah−1), maintaining significant cycle stability over 100 and 90 cycles, respectively. In addition, the 70–104 V NCM811||Li battery pack (3,904 Wh) exhibits a high energy density of 480.9 Wh kg−1and stable cycling over 25 cycles. These results demonstrate the need to circumvent inherent reliance on dominant solvation structures in electrolyte design to achieve the high-energy Battery600 and scalable Pack480 targets.",
+    "bibtex": "",
+    "award": null,
+    "order": 9,
+    "sources": [
+      "https://www.nature.com/articles/s41586-025-09382-4"
+    ],
+    "citation": {
+      "type": "article",
+      "year": 2025,
+      "container": "Nature",
+      "volume": "644",
+      "number": "8077",
+      "pages": "660--666",
+      "doi": "10.1038/s41586-025-09382-4",
+      "url": "https://www.nature.com/articles/s41586-025-09382-4"
+    },
+    "date": "2025-08-13",
+    "corresponding_authors": [
+      "Hao Guo",
+      "Xiaopeng Han",
+      "Xiaoping Ouyang",
+      "Wenbin Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://www.nature.com/articles/s41586-025-09382-4#corresponding-author",
+      "page": null,
+      "quote": "Corresponding authors — Correspondence to Hao Guo, Xiaopeng Han, Xiaoping Ouyang or Wenbin Hu."
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "tightllm",
+    "venue": "TC",
+    "year": 2025,
+    "title": "TightLLM: Maximizing Throughput for LLM Inference via Adaptive Offloading Policy",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/10949701"
+    },
+    "authors": [
+      "Yitao Hu",
+      "Xiulong Liu",
+      "Guotao Yang",
+      "Linxuan Li",
+      "Kai Zeng",
+      "Zhixin Zhao",
+      "Sheng Chen",
+      "Laiping Zhao",
+      "Wenxin Li",
+      "Keqiu Li"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated remarkable performance across a wide range of tasks, largely due to their substantial model size. However, this also results in significant GPU memory demands during inference. To address these challenges on hardware with limited GPU memory, existing approaches employ offloading techniques that offload unused tensors to CPU memory, thereby reducing GPU memory usage. Since offloading involves data transfer between GPU and CPU, it introduces transfer overhead. To mitigate this, prior works typically overlap data transfer with GPU computation using a fixed pipelining strategy applied uniformly across all inference iterations, referred to as static offloading. However, static offloading policies fail to maximize inference throughput because they cannot adapt to the dynamically changing transfer overhead during the inference process, leading to increasing GPU idleness and reduced inference throughput. We propose that offloading policies should be adaptive to the varying transfer overhead across inference iterations to maximize inference throughput. To this end, we design and implement an adaptive offloading-based inference system called TightLLM with two key innovations. First, its key-value (KV) distributor employs a trade-compute-for-transfer strategy to address growing transfer overhead by dynamically recomputing portions of the KV cache, effectively overlapping data transfer with computation and minimizing GPU idleness. Second, TightLLM’s weight loader slices model weights and distributes the loading process across multiple batches, amortizing the excessive weight loading overhead and significantly improving throughput. Evaluation across various combinations of GPU hardware and LLM models shows that TightLLM achieves 1.3 to 23 times higher throughput during the decoding phase and 1.2 to 22 times higher throughput in the prefill phase compared to state-of-the-art offloading systems. Due to the higher throughput in prefill and decoding phases, TightLLM can reduce the completion time for large-scale tasks, which involve processing and generating a substantial number of tokens, by 59.6% to 94.9%.",
+    "bibtex": "",
+    "award": null,
+    "order": 10,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tc.2025.3558009",
+      "https://www.researchgate.net/publication/390612533_TightLLM_Maximizing_Throughput_for_LLM_Inference_via_Adaptive_Offloading_Policy"
+    ],
+    "date": "2025-07",
+    "citation": {
+      "type": "article",
+      "year": 2025,
+      "doi": "10.1109/tc.2025.3558009",
+      "container": "IEEE Transactions on Computers",
+      "volume": "74",
+      "number": "7",
+      "pages": "2195-2209",
+      "url": "https://doi.org/10.1109/tc.2025.3558009"
+    },
+    "abstract_source_note": "Indexed abstract mirror; publisher access restricted. Recheck against the final author PDF when available.",
+    "corresponding_authors": [],
+    "corresponding_author_evidence": {
+      "status": "owner_confirmed_not_yitao",
+      "source": "Owner confirmation, 2026-11-14",
+      "quote": "The owner explicitly confirmed that Yitao Hu is not the corresponding author; other author names were not supplied."
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "slopt",
+    "venue": "TC",
+    "year": 2025,
+    "title": "SLOpt: Serving Real-Time Inference Pipeline with Strict Latency Constraint",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/10836842"
+    },
+    "authors": [
+      "Zhixin Zhao",
+      "Yitao Hu",
+      "Guotao Yang",
+      "Ziqi Gong",
+      "Chen Shen",
+      "Laiping Zhao",
+      "Wenxin Li",
+      "Xiulong Liu",
+      "Wenyu Qu"
+    ],
+    "abstract": "The rise of Machine Learning as a Service (MLaaS) has driven the demand for complex and customized real-time inference tasks, often requiring cascading multiple deep neural network (DNN) models into inference pipelines. However, these pipelines pose significant challenges due to scheduling complexity, particularly in maintaining strict latency service level objectives (SLOs). Existing systems serve pipelines with model-independent scheduling policies, which ignore the unique workload characteristics introduced by model cascading in the inference pipeline, leading to SLO violations and resource inefficiencies. In this paper, we propose that the serving system should exploit the model-cascading nature and inter-model workload dependency of the inference pipeline to ensure strict latency SLO cost-effectively. Based on this, we design and implement SLOpt, a serving system optimized for real-time inference pipelines with a three-stage co-design of workload estimation, resource provisioning, and request execution. SLOpt proposes cascade workload estimation and ahead-of-time tuning, which together address the challenge of cascade blocking and head-of-line blocking in workload estimation and resource provisioning. SLOpt further implements an adaptive batch drop policy to mitigate latency amplification issues within the pipeline. These innovations enable SLOpt to reduce the 99th percentile latency (P99 latency) by 1.4 to 2.5 times compared to the state of the arts while lowering serving costs by up to 29%. Moreover, to achieve comparable P99 latency, SLOpt requires up to 70% less cost than existing systems. Extensive evaluations on a 64-GPU cluster demonstrate SLOpt’s effectiveness in meeting strict P99 latency SLOs under diverse real-world workloads.",
+    "bibtex": "",
+    "award": null,
+    "order": 11,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tc.2025.3528125",
+      "https://www.researchgate.net/publication/387904922_SLOpt_Serving_Real-Time_Inference_Pipeline_with_Strict_Latency_Constraint"
+    ],
+    "date": "2025-04",
+    "citation": {
+      "type": "article",
+      "year": 2025,
+      "doi": "10.1109/tc.2025.3528125",
+      "container": "IEEE Transactions on Computers",
+      "volume": "74",
+      "number": "4",
+      "pages": "1431-1445",
+      "url": "https://doi.org/10.1109/tc.2025.3528125"
+    },
+    "abstract_source_note": "Indexed abstract mirror; publisher access restricted. Recheck against the final author PDF when available.",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "owner_confirmed",
+      "source": "Owner confirmation, 2026-11-14",
+      "quote": "The owner explicitly confirmed Yitao Hu as corresponding author."
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "harpagon",
+    "venue": "INFOCOM",
+    "year": 2025,
+    "title": "Harpagon: Minimizing DNN Serving Cost via Efficient Dispatching, Scheduling and Splitting",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/abstract/document/11044536"
+    },
+    "authors": [
+      "Zhixin Zhao",
+      "Yitao Hu",
+      "Ziqi Gong",
+      "Guotao Yang",
+      "Wenxin Li",
+      "Xiulong Liu",
+      "Keqiu Li",
+      "Hao Wang"
+    ],
+    "abstract": "Advances in deep neural networks (DNNs) have significantly contributed to the development of real-time video processing applications. Efficient scheduling of DNN workloads in cloud-hosted inference systems is crucial to minimizing serving costs while meeting application latency constraints. However, existing systems suffer from excessive module latency during request dispatching, low execution throughput during module scheduling, and wasted latency budget during latency splitting for multi-DNN application, which undermines their capability to minimize the serving cost. In this paper, we design a DNN inference system called Harpagon, which minimizes the serving cost under latency constraints with a three-level design. It first maximizes the batch collection rate with a batch-aware request dispatch policy to minimize the module latency. It then maximizes the module throughput with multi-tuple configurations and proper amount of dummy requests. It also carefully splits the end-to-end latency into per-module latency budget to minimize the total serving cost for multi-DNN applications. Evaluation shows that Harpagon outperforms the state of the art by 1.49 to 2.37 times in serving cost while satisfying the latency objectives. Additionally, compared to the optimal solution using brute force search, Harpagon derives the lower bound of serving cost for 91.5% workloads with millisecond level runtime.",
+    "bibtex": "",
+    "award": null,
+    "order": 12,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/infocom55648.2025.11044536",
+      "https://arxiv.org/abs/2412.06161"
+    ],
+    "date": "2025-05-19",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2025,
+      "doi": "10.1109/infocom55648.2025.11044536",
+      "container": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
+      "volume": null,
+      "number": null,
+      "pages": "1-10",
+      "url": "https://doi.org/10.1109/infocom55648.2025.11044536"
+    },
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://ieeexplore.ieee.org/abstract/document/11044536",
+      "page": 1,
+      "quote": "Corresponding author: Yitao Hu (email: yitao@tju.edu.cn)."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "lark",
+    "venue": "INFOCOM",
+    "year": 2025,
+    "title": "Lark: A Buffer-aware Building Block for Programmable Packet Scheduling in Datacenters",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/abstract/document/11044448"
+    },
+    "authors": [
+      "Song Zhang",
+      "Wenxin Li",
+      "Yulong Li",
+      "Yuan Liu",
+      "Lide Suo",
+      "Sheng Chen",
+      "Yitao Hu",
+      "Laiping Zhao",
+      "Keqiu Li"
+    ],
+    "abstract": "Programmable packet scheduling enables users to customize scheduling algorithms flexibly without designing new ASICs. Existing schemes prefer to approximate optimal Push-In First-Out (PIFO) using First-In First-Out (FIFO) queues in commodity programmable switches. Despite its availability, these schemes suffer performance degradation due to the unawareness of available switch buffer. To be specific, when the port buffer is drained, existing schemes discard all incoming packets, even though these packets have higher priorities than the enqueued packets. In this paper, we reveal that the problem’s key culprit is the lack of coordination between buffer management and packet scheduling in the switch. To fill this gap, we present Lark, a buffer-aware building block for programmable scheduling schemes designed to solve the above problem. Its key idea is to proactively drop the low-priority packets when the allocated buffer is to be drained, thereby admitting the later-arriving high-priority packets. Lark contains two modules, a lightweight gradient-based online prediction module and a simple priority-based decision module. Lark relies on the former module to identify whether the allocated buffer is to be drained and uses the latter to determine whether to drop the incoming packet. We have integrated Lark into two representative schemes, SP-PIFO and AIFO. Our large-scale evaluations over three realistic workloads show that Lark can significantly optimize their key metrics without sacrificing throughput.",
+    "bibtex": "",
+    "award": null,
+    "order": 13,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/infocom55648.2025.11044448",
+      "https://checks.eurekamag.com/research/096/051/096051330.php"
+    ],
+    "date": "2025-05-19",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2025,
+      "doi": "10.1109/infocom55648.2025.11044448",
+      "container": "IEEE INFOCOM 2025 - IEEE Conference on Computer Communications",
+      "volume": null,
+      "number": null,
+      "pages": "1-10",
+      "url": "https://doi.org/10.1109/infocom55648.2025.11044448"
+    },
+    "abstract_source_note": "Indexed abstract mirror; publisher access restricted. Recheck against the final author PDF when available.",
+    "corresponding_authors": [
+      "Wenxin Li"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://ieeexplore.ieee.org/abstract/document/11044448",
+      "page": 9,
+      "quote": "Wenxin Li is the corresponding author: toliwenxin@tju.edu.cn."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "pre-warming-is-not-enough",
+    "venue": "SoCC",
+    "year": 2024,
+    "title": "Pre-Warming is Not Enough: Accelerating Serverless Inference With Opportunistic Pre-Loading",
+    "ccf": "B",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3698038.3698509"
+    },
+    "authors": [
+      "Yifan Sui",
+      "Hanfei Yu",
+      "Yitao Hu",
+      "Jianxun Li",
+      "Hao Wang"
+    ],
+    "abstract": "Serverless computing has rapidly prospered as a new cloud computing paradigm with agile scalability, pay-as-you-go pricing, and ease-to-use features for Machine Learning (ML) inference tasks. Users package their ML code into lightweight serverless functions and execute them using containers. Unfortunately, a notorious problem, called cold-starts, hinders serverless computing from providing low-latency function executions. To mitigate cold-starts, pre-warming, which keeps containers warm predictively, has been widely accepted by academia and industry. However, pre-warming fails to eliminate the unique latency incurred by loading ML artifacts. We observed that for ML inference functions, the loading of libraries and models takes significantly more time than container warming. Consequently, pre-warming alone is not enough to mitigate the ML inference function’s cold-starts. This paper introduces InstaInfer, an opportunistic preloading technique to achieve instant inference by eliminating the latency associated with loading ML artifacts, thereby achieving minimal time cost in function execution. InstaInfer fully utilizes the memory of warmed containers to preload the function’s libraries and model, striking a balance between maximum acceleration and resource wastage. We design InstaInfer to be transparent to providers and compatible with existing pre-warming solutions. Experiments on OpenWhisk with real-world workloads show that InstaInfer reduces up to 93% loading latency and achieves up to 8× speedup compared to state-of-the-art pre-warming solutions.",
+    "bibtex": "",
+    "award": "Best Paper Award",
+    "order": 14,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3698038.3698509",
+      "Local author manuscript (verified first-page abstract)."
+    ],
+    "date": "2024-11-20",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2024,
+      "doi": "10.1145/3698038.3698509",
+      "container": "Proceedings of the ACM Symposium on Cloud Computing",
+      "volume": null,
+      "number": null,
+      "pages": "178-195",
+      "url": "https://doi.org/10.1145/3698038.3698509"
+    },
+    "corresponding_authors": [
+      "Jianxun Li"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://dl.acm.org/doi/10.1145/3698038.3698509",
+      "page": 1,
+      "quote": "Author line: Jianxun Li∗; footnote: ∗Corresponding author."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "ppt",
+    "venue": "SIGCOMM",
+    "year": 2024,
+    "title": "PPT: A Pragmatic Transport for Datacenters",
+    "ccf": "A",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3651890.3672235"
+    },
+    "authors": [
+      "Lide Suo",
+      "Yiren Pang",
+      "Wenxin Li",
+      "Renjie Pei",
+      "Keqiu Li",
+      "Xiulong Liu",
+      "Xin He",
+      "Yitao Hu",
+      "Guyue Liu"
+    ],
+    "abstract": "This paper introduces PPT, a pragmatic transport that achieves comparable performance to proactive transports while maintaining good deployability as reactive transports. Our key idea is to run a low-priority control loop to leverage the available bandwidth left by the reactive transports. The main challenge is to send just enough packets to improve performance without harming the primary control loop. We combine two unconventional techniques: an intermittent loop initialization and an exponential window decrease, enabling us to dynamically identify and fill the spare bandwidth. We further complement PPT’s design with a buffer-aware flow scheduling scheme to optimize the average FCT of small flows without prior knowledge of flow size information. We have implemented a PPT prototype in the Linux kernel with approximately 400 lines of code and demonstrated that compared to Homa, it delivers up to 46.3% lower overall average FCT and even 25%/55.5% lower average/tail FCT of small flows in a Memcached workload.",
+    "bibtex": "",
+    "award": null,
+    "order": 15,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3651890.3672235",
+      "https://cs.stanford.edu/~keithw/sigcomm2024/sigcomm24-final293-acmpaginated.pdf"
+    ],
+    "date": "2024-08-04",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2024,
+      "doi": "10.1145/3651890.3672235",
+      "container": "Proceedings of the ACM SIGCOMM 2024 Conference",
+      "volume": null,
+      "number": null,
+      "pages": "954-969",
+      "url": "https://doi.org/10.1145/3651890.3672235"
+    },
+    "corresponding_authors": [
+      "Wenxin Li"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://dl.acm.org/doi/10.1145/3651890.3672235",
+      "page": 1,
+      "quote": "Author line: WenxinLi1,2†; footnote: †Correspondingauthor. ∗Bothauthorscontributedequallytothisresearch."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "fuyao",
+    "venue": "ASPLOS",
+    "year": 2024,
+    "title": "FUYAO: DPU-enabled Direct Data Transfer for Serverless Computing",
+    "ccf": "A",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3620666.3651327"
+    },
+    "authors": [
+      "Guowei Liu",
+      "Laiping Zhao",
+      "Yiming Li",
+      "Zhaolin Duan",
+      "Sheng Chen",
+      "Yitao Hu",
+      "Zhiyuan Su",
+      "Wenyu Qu"
+    ],
+    "abstract": "Serverless computing typically relies on the third-party forwarding method to transmit data between functions. This method couples control flow and data flow together, resulting in significantly slow data transmission speeds. This challenge makes it difficult for the serverless computing paradigm to meet the low-latency requirements of web services. To solve this problem, we propose decoupling the control flow from the data flow, enabling direct data transfer between functions. We introduce Fuyao, the first intermediate data transfer solution capable of reducing data transfer latency to the sub-millisecond level. Fuyao provides four different data transfer methods to cater to diverse data transfer requirements within or between nodes. For function pairs that communicate frequently, Fuyao builds a stateful direct connection between them, enabling rapid inter-function data exchange. We evaluate Fuyao using real-world representative benchmarks. Experimental results show that Fuyao outperforms state-of-the-art systems by up to 57× on latency.",
+    "bibtex": "",
+    "award": null,
+    "order": 16,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3620666.3651327",
+      "https://www.asplos-conference.org/asplos2024/main-program/abstracts/index.html"
+    ],
+    "date": "2024-04-27",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2024,
+      "doi": "10.1145/3620666.3651327",
+      "container": "Proceedings of the 29th ACM International Conference on Architectural Support for Programming Languages and Operating Systems, Volume 3",
+      "volume": null,
+      "number": null,
+      "pages": "431-447",
+      "url": "https://doi.org/10.1145/3620666.3651327"
+    },
+    "corresponding_authors": [
+      "Laiping Zhao"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://dl.acm.org/doi/10.1145/3620666.3651327",
+      "page": 1,
+      "quote": "Author line: Laiping Zhao∗; footnote: *Corresponding author: laiping@tju.edu.cn"
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "high-throughput-sampling-communicating-and",
+    "venue": "IWQoS",
+    "year": 2023,
+    "title": "High-throughput Sampling, Communicating and Training for Reinforcement Learning Systems",
+    "ccf": "B",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/abstract/document/10188703"
+    },
+    "authors": [
+      "Laiping Zhao",
+      "Xinan Dai",
+      "Zhixin Zhao",
+      "Yusong Xin",
+      "Yitao Hu",
+      "Jun Qian",
+      "Jun Yao",
+      "Keqiu Li"
+    ],
+    "abstract": "Reinforcement Learning (RL) algorithms require large amounts of computational resources and time to train due to the simultaneous model training and real-time interactions with simulation environments. This results in an RL algorithm’s training time potentially exceeding days to months. We present HRL, a comprehensive optimization system designed to improve the system throughput of RL algorithms. HRL addresses the challenges of discovering and identifying bottlenecks in the sampling, training, or communication stages and promptly improving their performance. We propose a group-parallel pipeline method to improve the sampling efficiency and apply data quantization and multi-learner training to resolve the network and learning bottlenecks. The HRL system has been fully implemented and integrated with XingTian. The results of the experiments show that the HRL system can improve the throughput by 18.6%-90.6%.",
+    "bibtex": "",
+    "award": null,
+    "order": 17,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/iwqos57198.2023.10188703",
+      "https://eurekamag.com/research/099/892/099892804.php"
+    ],
+    "date": "2023-06-19",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2023,
+      "doi": "10.1109/iwqos57198.2023.10188703",
+      "container": "2023 IEEE/ACM 31st International Symposium on Quality of Service (IWQoS)",
+      "volume": null,
+      "number": null,
+      "pages": "1-10",
+      "url": "https://doi.org/10.1109/iwqos57198.2023.10188703"
+    },
+    "abstract_source_note": "Indexed abstract mirror; publisher access restricted. Recheck against the final author PDF when available.",
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://ieeexplore.ieee.org/abstract/document/10188703",
+      "page": 1,
+      "quote": "Author line: Yitao Hu*†; footnote: *Corresponding author."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "accelerating-data-delivery-of-latency",
+    "venue": "TPDS",
+    "year": 2023,
+    "title": "Accelerating Data Delivery of Latency-Sensitive Applications in Container Overlay Network",
+    "ccf": "A",
+    "links": {
+      "paper": "https://ieeexplore.ieee.org/document/10198904"
+    },
+    "authors": [
+      "Hao Liu",
+      "Wenxin Li",
+      "Yiren Pang",
+      "Renjie Pei",
+      "Yitao Hu",
+      "Yuan Liu",
+      "Lide Suo",
+      "Keqiu Li"
+    ],
+    "abstract": "Container overlay network, though being widely adopted to enable communication between containers on different hosts, is a key downside for latency-sensitive applications. The state-of-the-art solution seeks to shorten the data path in packet processing by replacing overlay connection file descriptors with host namespace ones. While promising, it must block each overlay connection until the relevant host connection is set up, thus heavily influencing the request latency. In this paper, we present ShuntFlow, a systematic data delivery framework that seamlessly integrates the host and overlay networks to reduce the application’s request-response latency. ShuntFlow first lets all connections flow in the overlay network directly. Then, it adopts a simple-yet-effective syscall-threshold-based mechanism to pick appropriate connections and switches their data delivery to the host network in a blocking-free way using a multi-threading technique. As such, unnecessary connection switches are prevented; yet, the pre-setup phase dilemma is eliminated. We have implemented a ShuntFlow prototype based on Linux and Docker and evaluated it extensively on a 40 Gbps testbed. The results show that ShuntFlow achieves 13%/72% and 19%/69% reductions, in average/tail request-response latency of a web server and an in-memory key-value store, respectively, while incurring less CPU overhead, compared to Slim.",
+    "bibtex": "",
+    "award": null,
+    "order": 18,
+    "sources": [
+      "https://api.crossref.org/works/10.1109/tpds.2023.3300745",
+      "https://ieeexplore.ieee.org/document/10198904/"
+    ],
+    "date": "2023-12",
+    "citation": {
+      "type": "article",
+      "year": 2023,
+      "doi": "10.1109/tpds.2023.3300745",
+      "container": "IEEE Transactions on Parallel and Distributed Systems",
+      "volume": "34",
+      "number": "12",
+      "pages": "3046-3058",
+      "url": "https://doi.org/10.1109/tpds.2023.3300745"
+    },
+    "corresponding_authors": [
+      "Wenxin Li"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://ieeexplore.ieee.org/document/10198904",
+      "page": 1,
+      "quote": "(Corresponding author: Wenxin Li.)"
+    },
+    "publication_type": "journal"
+  },
+  {
+    "id": "scrooge",
+    "venue": "SoCC",
+    "year": 2021,
+    "title": "Scrooge: A Cost-Effective Deep Learning Inference System",
+    "ccf": "B",
+    "links": {
+      "paper": "https://dl.acm.org/doi/abs/10.1145/3472883.3486993"
+    },
+    "authors": [
+      "Yitao Hu",
+      "Rajrup Ghosh",
+      "Ramesh Govindan"
+    ],
+    "abstract": "Advances in deep learning (DL) have prompted the development of cloud-hosted DL-based media applications that process video and audio streams in real-time. Such applications must satisfy throughput and latency objectives and adapt to novel types of dynamics, while incurring minimal cost. Scrooge, a system that provides media applications as a service, achieves these objectives by packing computations efficiently into GPU-equipped cloud VMs, using an optimization formulation to find the lowest cost VM allocations that meet the performance objectives, and rapidly reacting to variations in input complexity (e.g., changes in participants in a video). Experiments show that Scrooge can save serving cost by 16-32% (which translate to tens of thousands of dollars per year) relative to the state-of-the-art while achieving latency objectives for over 98% under dynamic workloads.",
+    "bibtex": "",
+    "award": null,
+    "order": 19,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3472883.3486993",
+      "Local author manuscript (verified first-page abstract)."
+    ],
+    "date": "2021-11",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2021,
+      "doi": "10.1145/3472883.3486993",
+      "container": "Proceedings of the ACM Symposium on Cloud Computing",
+      "volume": null,
+      "number": null,
+      "pages": "624-638",
+      "url": "https://doi.org/10.1145/3472883.3486993"
+    },
+    "corresponding_authors": [],
+    "corresponding_author_evidence": {
+      "status": "not_explicit_in_local_pdf",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3472883.3486993",
+      "page": null,
+      "quote": "Full local PDF text searched; no explicit corresponding-author designation found."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "rim",
+    "venue": "IoTDI",
+    "year": 2021,
+    "title": "Rim: Offloading Inference to the Edge",
+    "ccf": null,
+    "links": {
+      "paper": "https://dl.acm.org/doi/abs/10.1145/3450268.3453521"
+    },
+    "authors": [
+      "Yitao Hu",
+      "Weiwu Pang",
+      "Xiaochen Liu",
+      "Rajrup Ghosh",
+      "Bongjun Ko",
+      "Wei-Han Lee",
+      "Ramesh Govindan"
+    ],
+    "abstract": "Video cameras are among the most ubiquitous sensors in the Internet-of-Things. Video and audio applications, such as cross-camera activity detection, avatar extraction or language translation will, in the future, offload processing to an edge cluster of GPUs. Rim is a management system for such clusters that satisfies throughput and latency requirements of these applications, while enabling high cluster utilization. It uses coarse-grained knowledge of application structure to profile throughput of applications on resources, then uses these profiles to place applications on cluster nodes to achieve these goals. It dynamically adapts placement to load and failures. Experiments show that on maximal workloads on a testbed, Rim can satisfy requirements of all applications, but competing approaches designed for low-latency GPU execution cannot.",
+    "bibtex": "",
+    "award": null,
+    "order": 20,
+    "sources": [
+      "https://api.crossref.org/works/10.1145/3450268.3453521",
+      "https://research.ibm.com/publications/rim-offloading-inference-to-the-edge"
+    ],
+    "date": "2021-05-18",
+    "citation": {
+      "type": "inproceedings",
+      "year": 2021,
+      "doi": "10.1145/3450268.3453521",
+      "container": "Proceedings of the International Conference on Internet-of-Things Design and Implementation",
+      "volume": null,
+      "number": null,
+      "pages": "80-92",
+      "url": "https://doi.org/10.1145/3450268.3453521"
+    },
+    "corresponding_authors": [],
+    "corresponding_author_evidence": {
+      "status": "not_explicit_in_local_pdf",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3450268.3453521",
+      "page": null,
+      "quote": "Full local PDF text searched; no explicit corresponding-author designation found."
+    },
+    "publication_type": "conference"
+  },
+  {
+    "id": "rac",
+    "venue": "Preprint",
+    "year": 2026,
+    "title": "RAC: Reference-Aware Activation Compression for Communication-Efficient Split LLM Inference",
+    "ccf": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2608.04991"
+    },
+    "authors": [
+      "Yang, Guotao",
+      "Zhao, Mingxi",
+      "Li, Haopeng",
+      "Wang, Zhengchao",
+      "Chen, Sheng",
+      "Hu, Yitao",
+      "Li, Keqiu"
+    ],
+    "abstract": "Large language model (LLM) agents repeatedly process long, privacy-sensitive contexts, while cloud-only deployment exposes user data beyond the trusted endpoint and fully local deployment often requires costly hardware. Split inference offers a middle ground by executing the model head, tail, and tools locally and the middle layers in the cloud, but its local-cloud-local path transfers boundary hidden states at every invocation and creates a critical communication bottleneck. We present \\system, a reference-aware codec that retrieves exact-token historical spans for prefill uplinks, reuses the reconstructed uplink state for same-round prefill downlinks, and generates boundary-specific decode references with lightweight causal predictors. RAC applies grouped affine alignment and calibrated residual quantization with optional prefill outliers, while sender-side wire-format reconstruction synchronizes subsequent references and offline calibration accounts for quality and packed representation costs. Across three models and nine evaluated model-link pairs, Raw-to-RAC mean time to first token (TTFT) and time per output token (TPOT) ratios are 1.24-2.72× and 1.01-2.79×, while the 12 non-perplexity task-score changes range from -0.40 to +2.50 points.",
+    "bibtex": "",
+    "award": null,
+    "order": 21,
+    "sources": [
+      "https://arxiv.org/abs/2608.04991"
+    ],
+    "date": "2026-08-05",
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2608.04991",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2608.04991"
+    },
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2608.04991",
+      "page": 1,
+      "quote": "*Corresponding author: Yitao Hu (e-mail: yitao@tju.edu.cn)."
+    },
+    "publication_type": "preprint"
+  },
+  {
+    "id": "asymspec",
+    "venue": "Preprint",
+    "year": 2026,
+    "title": "AsymSpec: Efficient Cloud-Edge Speculative Decoding over Asymmetric Networks",
+    "ccf": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2608.04974"
+    },
+    "authors": [
+      "Yang, Guotao",
+      "Chen, Hao",
+      "Guo, Rui",
+      "Li, Xinyu",
+      "Zheng, Liang",
+      "Chen, Sheng",
+      "Hu, Yitao",
+      "Li, Keqiu"
+    ],
+    "abstract": "Cloud-edge speculative decoding places a lightweight draft model at an edge gateway and a higher-quality target model in the cloud, but inserts communication into every speculative block. Under a constrained uplink, candidate messages may queue while the verifier is idle. Stop-and-wait scheduling leaves edge compute underutilized; optimistic same-request runahead can waste work when a rejection or an unexpected bonus token invalidates dependent drafts. We present AsymSpec, which addresses uplink-gated verification and invalid dependent work with two corresponding mechanisms. Its asymmetric verification protocol keeps the common-path acceptance upload compact and moves richer, rejection-only correction information to the downlink. A total-variation (TV) certificate for the residual distribution determines whether a small target top-K response suffices; if not, the protocol progressively escalates through proposal-based exact recovery before falling back to the full distribution. Its confirmed-prefix pipeline exposes only independent, valid requests to the edge scheduler and lets the cloud re-batch arrived blocks, hiding verification waits when another confirmed-prefix request is ready without using same-request runahead. Across three draft-target pairs, two workloads, and three asymmetric network profiles, our end-to-end evaluation shows that AsymSpec delivers 2.82-28.03× the output-token throughput of the strongest baseline.",
+    "bibtex": "",
+    "award": null,
+    "order": 22,
+    "sources": [
+      "https://arxiv.org/abs/2608.04974"
+    ],
+    "date": "2026-08-05",
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2608.04974",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2608.04974"
+    },
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2608.04974",
+      "page": 1,
+      "quote": "*Corresponding author: Yitao Hu (e-mail: yitao@tju.edu.cn)."
+    },
+    "publication_type": "preprint"
+  },
+  {
+    "id": "patchkv",
+    "venue": "Preprint",
+    "year": 2026,
+    "title": "PatchKV: Efficient KV Cache Recovery for Dynamically Edited LLM Contexts",
+    "ccf": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2609.26219"
+    },
+    "authors": [
+      "Yang, Guotao",
+      "Guo, Rui",
+      "He, Siwei",
+      "Chen, Sheng",
+      "Hu, Yitao",
+      "Li, Keqiu"
+    ],
+    "abstract": "Long-running LLM agent workflows often revise interior context spans while retaining long suffixes. Although suffix tokens remain unchanged, altered causal histories and rotary positions prevent exact reuse of their offloaded key-value (KV) states. Full suffix recomputation wastes prefill work, while indiscriminate reuse propagates stale states and full-precision restoration adds data movement. We present PatchKV, a profile-guided recovery system for suffix-preserving revisions. PatchKV decomposes adjacent context versions into an exact prefix, an updated span, and an aligned suffix. It predicts an edit-local dirty region using an offline length-conditioned drift model, augments this region with sparse nonlocal blocks selected from stored attention, and block-rounds their union into a fixed repair set. The remaining suffix blocks are restored from CPU memory using frozen per-block precision tags and a fused path for dequantization, RoPE correction, and KV-page placement. Across three models and three long-context question-answering workloads, PatchKV achieves a 2.51-3.85× speedup in mean resume time-to-first-token over full suffix recomputation and a 1.26-2.06× speedup over CacheBlend, while matching or exceeding CacheBlend's F1 score in six of nine settings and remaining within 1.36 points in the others.",
+    "bibtex": "",
+    "award": null,
+    "order": 23,
+    "sources": [
+      "https://arxiv.org/abs/2609.26219"
+    ],
+    "date": "2026-08-18",
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2609.26219",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2609.26219"
+    },
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2609.26219",
+      "page": 1,
+      "quote": "*Corresponding author: Yitao Hu (e-mail: yitao@tju.edu.cn)."
+    },
+    "publication_type": "preprint"
+  },
+  {
+    "id": "serverlesslora",
+    "venue": "Preprint",
+    "year": 2026,
+    "title": "ServerlessLoRA: Minimizing Latency and Cost in Serverless Inference for LoRA-Based LLMs",
+    "ccf": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2505.14468"
+    },
+    "authors": [
+      "Sui, Yifan",
+      "Wang, Hao",
+      "Yu, Hanfei",
+      "Xu, Kaiqiang",
+      "Hu, Yitao",
+      "Chen, Chen",
+      "Li, Jianxun",
+      "Chen, Kai"
+    ],
+    "abstract": "Multi-LoRA (Low-Rank Adaptation) serving allows many specialized LLM variants to share the same base model by attaching lightweight adapters. This makes it attractive for serving large catalogs of domain-, tenant-, and task-specific models. However, existing deployments waste resources on rarely used adapters, while directly running LoRA inference on serverless platforms introduces high memory overhead, repeated cold starts, and poor scheduling decisions. This paper presents ServerlessLoRA, a serverless multi-LoRA serving system that separates serving state into shared backbone state, reusable variant warm state, and request-private state. ServerlessLoRA loads each backbone once, shares it read-only across isolated LoRA functions, batches selected backbone operations, selectively warms variant state, and routes requests based on state locality and GPU contention. Evaluated on industrial traces, ServerlessLoRA reduces time-to-first-token by up to 92.3% against serverless baselines and achieves 1.66-3.01 times and 2.20-3.26 times higher latency-cost efficiency than vLLM-LoRA and dLoRA, respectively.",
+    "bibtex": "",
+    "award": null,
+    "order": 25,
+    "sources": [
+      "https://arxiv.org/abs/2505.14468"
+    ],
+    "date": "2025-05-20",
+    "citation": {
+      "type": "misc",
+      "year": 2025,
+      "eprint": "2505.14468",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2505.14468"
+    },
+    "corresponding_authors": [],
+    "corresponding_author_evidence": {
+      "status": "not_explicit_in_full_pdf",
+      "source_url": "https://arxiv.org/pdf/2505.14468",
+      "page": null,
+      "quote": "Full arXiv PDF checked; no explicit corresponding-author or correspondence designation found. Author affiliation superscripts are numeric."
+    },
+    "publication_type": "preprint"
+  },
+  {
+    "id": "rewy",
+    "venue": "Preprint",
+    "year": 2026,
+    "title": "ReWY: Faster Backpropagation for Delta-Rule Attention - From 7 to 3 Matrix Multiplications",
+    "ccf": null,
+    "links": {
+      "paper": "https://arxiv.org/abs/2611.01940",
+      "code": "https://github.com/flashserve/ReWY"
+    },
+    "authors": [
+      "Zhang, Yi",
+      "Zhao, Zhixin",
+      "Sun, Weiwei",
+      "Hu, Yitao",
+      "Chen, Sheng",
+      "Li, Keqiu"
+    ],
+    "abstract": "Delta-rule linear attention underlies language models such as Kimi Linear and Qwen3-Next. Chunkwise implementations expose matrix parallelism, but their backward passes compute unnecessary auxiliary adjoints. We present ReWY, an algebraic reformulation that reduces this work before optimizing accelerator execution. Differentiating the chunk correction as one triangular residual system eliminates the inverse adjoint and reduces seven local WY matrix products to three. Two complementary transformations expose further reuse: centered matrix contractions replace pairwise vector-gate processing, and scalar-gate reductions reuse key-gradient products instead of forming a key Gram matrix. These identities simplify backward computation for DeltaNet, GDN, KDA, and GDN2 while preserving the recurrence and gradients in exact arithmetic, without changing the architecture or training objective. We implement the reduced graph on GPUs and Ascend NPUs. Under matched recomputation and full-saving policies, precision-qualified six-shape comparisons with frozen FLA references yield 1.15-1.81× geometric-mean complete low-level backward speedups on NVIDIA GPUs. All four operators achieve 1.18-1.70× on H100 and H200 while retaining original FP32 working matrices. A separate public-autograd evaluation on Ascend 950DT, including gradient conversions, yields 1.09-2.89× under available matched policies. Paired ablations establish further ReWY gains after optimizing the complementary contractions. Complete-gradient checks validate the recorded operator cases; supplementary full-model backward measurements assess integration into community FLA models and a GDN2 layer port. Code and reproduction materials: https://github.com/flashserve/ReWY .",
+    "bibtex": "",
+    "award": null,
+    "order": 26,
+    "sources": [
+      "https://arxiv.org/abs/2611.01940",
+      "https://arxiv.org/pdf/2611.01940v2"
+    ],
+    "date": "2026-11-01",
+    "citation": {
+      "type": "misc",
+      "year": 2026,
+      "eprint": "2611.01940",
+      "archivePrefix": "arXiv",
+      "url": "https://arxiv.org/abs/2611.01940"
+    },
+    "corresponding_authors": [
+      "Yitao Hu"
+    ],
+    "corresponding_author_evidence": {
+      "status": "verified",
+      "source_url": "https://arxiv.org/pdf/2611.01940v2",
+      "page": 1,
+      "quote": "Author block: Yitao Hu∗; footnote: ∗Corresponding author."
+    },
+    "publication_type": "preprint"
+  }
+]
